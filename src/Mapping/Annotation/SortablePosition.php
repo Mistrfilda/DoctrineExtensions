@@ -10,15 +10,19 @@
 namespace Gedmo\Mapping\Annotation;
 
 use Doctrine\Common\Annotations\Annotation;
-
+use Attribute;
+use Gedmo\Mapping\Annotation\Annotation as GedmoAnnotation;
 /**
  * Position annotation for Sortable extension
  *
  * @author Lukas Botsch <lukas.botsch@gmail.com>
  *
+ * @NamedArgumentConstructor
+ *
  * @Annotation
  * @Target("PROPERTY")
  */
-final class SortablePosition extends Annotation
+#[Attribute(Attribute::TARGET_PROPERTY)]
+final class SortablePosition implements GedmoAnnotation
 {
 }
